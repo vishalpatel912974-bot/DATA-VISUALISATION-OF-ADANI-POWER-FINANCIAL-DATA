@@ -1,0 +1,32 @@
+import matplotlib.pyplot as plt
+
+# ----- Data -----
+years = ["2020", "2021", "2022", "2023", "2024"]
+
+revenue = [29000, 31800, 38600, 54700, 60000]   # in ₹ crore
+expenses = [25000, 27000, 29500, 33000, 36000]  # in ₹ crore
+profit = [2400, 4800, 9100, 21700, 24000]       # in ₹ crore
+
+# ----- Plot -----
+plt.figure(figsize=(14, 8))
+
+# Bar chart for Revenue
+plt.bar(years, revenue, label="Revenue", alpha=0.6)
+
+# Pie chart for Expenses (inset)
+plt.axes([0.15, 0.55, 0.25, 0.25])
+plt.pie(expenses, labels=years, autopct="%1.1f%%")
+plt.title("Expenses Share")
+
+# Line chart for Profit
+plt.plot(years, profit, marker="o", linewidth=3, label="Profit", color="black")
+
+# Labels & Title
+plt.title("Adani Power – Financial Performance (Last 5 Years)")
+plt.xlabel("Year")
+plt.ylabel("Amount (₹ Crore)")
+plt.legend()
+
+# Show chart
+plt.tight_layout()
+plt.show()
